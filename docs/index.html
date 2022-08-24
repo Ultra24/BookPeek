@@ -1,1 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <html lang="en-us">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta charset="UTF-8">
+      <meta name="keywords" content="Book Tracker, Book Keeper, List of Books, Keep track of books, Book Wishlist, Booklist, Wishlist">
+      <meta name="description" content="With Book Keeper, you'll always be able to keep track of books you've read, and books you want to read.">
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="msapplication-TileColor" content="#da532c">
+      <meta name="theme-color" content="#ffffff">
+      <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+      <link rel="manifest" href="icons/site.webmanifest">
+      <link rel="mask-icon" href="icons/safari-pinned-tab.svg" color="#5bbad5">
+      <title>BookPeek</title>
+  </head>
+  
+  <body>
+      <noscript>Error: JavaScript is disabled! JavaScript is required for Book Keeper to work.</noscript>
+        <div id = "alert">
+             Error! Please type a book's name.
+            <span class = "close-alert" onclick="parentElement.style.display='none'">×</span>
+        </div>
 
+        <h1>BookPeek</h1> 
+        <a href = "https://github.com/ultra24" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+        <form class="book-list">
+            <h3>Books I've read:</h3>
+            <div class="form" name = "read">
+                <input type="text" id="books-read" name = "booksread" placeholder="ex. Nineteen Eighty-Four by George Orwell" autocomplete="off">
+                <button type="button" id="add" onclick = addBooksRead()>Add</button>
+                <br><br>
+                <ul id = "booksReadList">
+                </ul>
+            </div>
+
+            <br><br>
+
+            <h3>Books I'd like to read:</h3>
+            <div class = "wishlist">
+            <input type="text" id="books-wishlist" name = "bookswishlist" placeholder="ex. Steve Jobs by Walter Isaacson" autocomplete="off">
+            <button type="button" id="addWishlist" onclick = addWishlist()>Add</button>
+            <br><br>
+            <ul id = "booksWishlistList"></ul>
+            </div>
+        </form>
+
+        <script src="app.js"></script>
+    </body>
+</html>
