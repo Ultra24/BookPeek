@@ -39,3 +39,38 @@ document.querySelector("#add").onclick = function addBooksRead() {
         }
     }
 }
+
+// same code, modified for other list
+document.querySelector("#addWishlist").onclick = function addWishlist() {
+    let booksWishlist = document.getElementById("books-wishlist").value;
+    let booksWishlistID = document.getElementById("books-wishlist");
+    let booksWishlistList = document.getElementById("booksWishlistList"); // goofy var name, ik
+   
+    if (booksWishlist === "" || booksWishlist.trim().length === 0) {
+        document.getElementById("alert").style.display = "block";
+        booksWishlistID.className = "invalid";
+    } else {
+        let itemWish = document.createElement("li");
+        itemWish.innerText = booksWishlist;
+        booksWishlistList.appendChild(itemWish);
+        booksWishlistID.value = "";
+        document.getElementById("alert").style.display = "none";
+
+        let closeBtnWish = document.createElement("span");
+        closeBtnWish.innerText = "×";
+        closeBtnWish.className = "close-btn-wish";
+        itemWish.appendChild(closeBtnWish);
+
+        closeBtnWish.addEventListener("click", function() {
+            booksWishlistList.removeChild(itemWish);
+        })
+
+        // mobile friendly delete
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            itemWish.addEventListener("click", function() {
+                booksWishlistList.removeChild(itemWish);
+            })
+        }
+    }
+}
+
