@@ -4,4 +4,3 @@ BookPeek is an online Web Application designed to keep track of books that you h
 
 ## Todo
 <li> Remember items in list when webapp is refreshed </li>
-<li> fix footer to behave as intended (make it sticky) </li>
