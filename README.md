@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://github.com/Ultra24/BookPeek/blob/main/icons/android-chrome-192x192.png">
+  <img src="https://github.com/Ultra24/BookPeek/blob/main/docs/android-chrome-512x512.png" width = "20%" height = "20%">
   <h1><a href = "https://ultra24.github.io/BookPeek">BookPeek</a></h1>
   <h3>Elegant. Bold. Snappy.</h3>
   <br>
