@@ -33,7 +33,7 @@ document.querySelector("#add").onclick = function addBooksRead() {
 
         // mobile friendly delete function
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-            itemRead.addEventListener("click", function() {
+            itemRead.addEventListener("dblclick", function() {
                 booksReadList.removeChild(itemRead);
             })
         }
@@ -67,7 +67,7 @@ document.querySelector("#addWishlist").onclick = function addWishlist() {
 
         // mobile friendly delete
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-            itemWish.addEventListener("click", function() {
+            itemWish.addEventListener("dblclick", function() {
                 booksWishlistList.removeChild(itemWish);
             })
         }
