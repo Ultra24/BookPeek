@@ -6,18 +6,39 @@ body {
     text-align: center;
     background-color: #f8f4e3; /* cosmic latte */
     color: #2a2b2a; /* jet black */
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
 }
 
 h1 {
     text-align: center;
-    margin-top: 20px;
-    margin-left: 3%;
+    margin: 0px;
     font-size: 54px;
     font-family: "Halant", serif;
     display: inline-block;
-    vertical-align: middle;
 }
 
+h2 {
+    margin-bottom: 50px;
+    color: #003459; /* Prussian Blue */
+}
+
+#ghub {
+    color: #003459;
+    margin: 10px;
+    padding-bottom: 0px;
+    
+}
+
+#ghub:hover {
+    color: rgb(120, 8, 8);
+    transition: .25s; 
+}
 
 #alert, noscript {
     font-family: "Inconsolota", monospace;
@@ -88,7 +109,7 @@ input {
 }
 
 input:focus {
-    border-bottom: 3.5px solid #003459; /* Prussian Blue */
+    border-bottom: 3.5px solid #003459;
     transition: .1s ease;
 }
 
@@ -173,12 +194,6 @@ a {
     color: rgb(19, 36, 74);
 } 
 
-i {
-    vertical-align:text-top;
-    margin-top: right;
-    float: right;
-}
-
 a:hover {
    transition: .2s ease;
    color: rgb(120, 8, 8);
@@ -209,10 +224,6 @@ li:hover {
 }
 
 @media (max-width: 900px) {
-
-    h1 {
-        margin-left: 10%;
-    }
     body {
         width: 95%;
     }
