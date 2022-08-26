@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Halant:wght@600&family=Inconsolata:wght@600&family=Nunito+Sans:wght@400&family=Roboto+Slab:wght@425&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Halant:wght@600&family=Inconsolata:wght@600&family=Nunito+Sans:wght@400&family=Roboto+Slab:wght@400&display=swap');
 
 body {
     height: 100%;
@@ -64,6 +64,11 @@ h2 {
     100% {opacity: 1;}
  } 
 
+ .fadeOut {
+    animation: fadeOut .75s;
+    transition: .75s ease;
+}
+
 @keyframes fadeOut {
     100% {opacity: 1;}
     0% {opacity: 0;}
@@ -95,7 +100,7 @@ form {
 }
 
 input {
-    width: 23%;
+    width: 13%;
     height: 25px;
     font-family: "Nunito Sans", sans-serif;
     font-size: 18px;
@@ -123,6 +128,11 @@ input:focus {
     animation-iteration-count: 2;
 }
 
+.invalid2 {
+    animation: shake2 .3s;
+    animation-iteration-count: 2;
+}
+
 @keyframes shake {
     25% { transform: translateX(4px) }
     50% { transform: translateX(-4px) }
@@ -132,6 +142,10 @@ input:focus {
 .form {
     top: 200%;
     text-transform: capitalize;
+}
+
+.mobile {
+    display: none;
 }
 
 .close-btn {
@@ -201,13 +215,13 @@ a:hover {
 
 li {
     list-style: none;
-    width: 32%;
+    width: 40%;
     text-align: left;
     border-radius: 4px;
     padding: 10px; 
     padding-left: 1.5%;
     margin: 10px auto;
-    margin-left: 31.45%;
+    margin-left: 27.5%;
     background-color: #003459;
     color: #f8f4e3;
     text-transform: none;
@@ -222,8 +236,7 @@ li:hover {
     transform: translateY(-5px);
     transition: .3s ease;
 }
-
-@media (max-width: 900px) {
+@media (max-width: 700px) {
     body {
         width: 95%;
     }
@@ -245,8 +258,23 @@ li:hover {
     }
 
     li {
-        width: 80%;
-        margin-left: 2%;
+        width: 100%;
+        margin-left: -6%;
     }
 
+    .mobile {
+        display: block;
+    }
+
+    h3 {
+        font-family: "Roboto Slab", serif;
+        word-spacing: -3px;
+    }
+  }
+
+  @media (min-width: 701px) and (max-width: 1100px) {
+    li {
+        width: 60%;
+        margin-left: 17%;
+    }
   }
