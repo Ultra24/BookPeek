@@ -1,3 +1,8 @@
+/* 
+10-08-22
+Written on Umer's Macbook Pro
+*/
+
 document.querySelector("#add").onclick = function addBooksRead() {
     let booksRead = document.getElementById("books-read-name").value;
     let booksReadID = document.getElementById("books-read-name");
