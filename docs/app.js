@@ -4,56 +4,99 @@ Written on Umer's Macbook Pro
 */
 
 document.querySelector("#add").onclick = function addBooksRead() {
-    let booksRead = document.getElementById("books-read").value;
-    let booksReadID = document.getElementById("books-read");
+    let booksRead = document.getElementById("books-read-name").value;
+    let booksReadID = document.getElementById("books-read-name");
+    let booksReadAuthor = document.getElementById("books-read-author").value;
+    let booksReadAuthorID = document.getElementById("books-read-author");
+    let booksReadPg = document.getElementById("books-read-pg").value;
+    let booksReadPgID = document.getElementById("books-read-pg");
     let booksReadList = document.getElementById("booksReadList");
-     
-    // if user doesn't input any text, display an error 
-    if (booksRead === "" || booksRead.trim().length === 0) { // .trim() checks if string only contains spaces, if length is 0 then it only contains spaces. 
+
+    if (booksRead === "" || booksRead.trim().length === 0 || booksReadAuthor === "" || booksReadAuthor.trim().length === 0) { // .trim() checks if string only contains spaces, if length is 0 then it only contains spaces. 
         document.getElementById("alert").style.display = "block";
-        booksReadID.className = "invalid";
-    } else { // otherwise, accept input as valid and create items in list.
+        
+        if (booksRead === "" || booksRead.trim().length === 0) {
+            booksReadID.className = "invalid";
+        } else if (booksReadAuthor === "" || booksReadAuthor.trim().length === 0) {
+            booksReadAuthorID.className = "invalid"; 
+        }
+    } else {
         let itemRead = document.createElement("li");
-        itemRead.innerText = booksRead;
+
+        if (booksReadPg === "") {
+            itemRead.innerText = booksRead + " by " +  booksReadAuthor + " - " + " ??? pages";
+        } else {
+            itemRead.innerText = booksRead + " by " +  booksReadAuthor + " - " + booksReadPg + " pages";
+        }
+        
         booksReadList.appendChild(itemRead);
 
-        booksReadID.value = ""; // clears input text
-        document.getElementById("alert").style.display = "none"; // alert doesn't show up
-          
-        // adding close button next to each list item
-        let closeBtn = document.createElement("span"); 
+        // clears input text to show placeholders when item is added
+        booksReadID.value = ""; 
+        booksReadAuthorID.value = "";
+        booksReadPgID.value = "";
+
+        document.getElementById("alert").style.display = "none";
+
+        let closeBtn = document.createElement("span");
         closeBtn.innerText = "×";
         closeBtn.className = "close-btn";
         itemRead.appendChild(closeBtn);
-     
-        // function for deleting item on click of delete button
+
+        console.log(booksReadList);
+
         closeBtn.addEventListener("click", function() {
+            itemRead.className = "fadeOut";
             booksReadList.removeChild(itemRead);
         })
 
-        // mobile friendly delete function
+        // mobile friendly delete 
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+
+            itemRead.addEventListener("click", function() {
+                closeBtn.style.display = "block";
+            })
+
             itemRead.addEventListener("dblclick", function() {
                 booksReadList.removeChild(itemRead);
             })
         }
     }
-}
+} 
+ 
 
-// same code, modified for other list
 document.querySelector("#addWishlist").onclick = function addWishlist() {
-    let booksWishlist = document.getElementById("books-wishlist").value;
-    let booksWishlistID = document.getElementById("books-wishlist");
+    let booksWishlist = document.getElementById("books-wishlist-name").value;
+    let booksWishlistID = document.getElementById("books-wishlist-name");
+    let booksWishlistAuthor = document.getElementById("books-wishlist-author").value;
+    let booksWishlistAuthorID = document.getElementById("books-wishlist-author");
+    let booksWishlistPg = document.getElementById("books-wishlist-pg").value;
+    let booksWishlistPgID = document.getElementById("books-wishlist-pg");
     let booksWishlistList = document.getElementById("booksWishlistList"); // goofy var name, ik
-   
+
     if (booksWishlist === "" || booksWishlist.trim().length === 0) {
         document.getElementById("alert").style.display = "block";
         booksWishlistID.className = "invalid";
+        
+        if (booksWishlist === "" || booksRead.trim().length === 0) {
+            booksWishlistID.className = "invalid";
+        } else { booksWishlistAuthorID.className = "invalid"; }
+
     } else {
         let itemWish = document.createElement("li");
-        itemWish.innerText = booksWishlist;
         booksWishlistList.appendChild(itemWish);
+
+        if (booksWishlistPg === "") {
+            itemWish.innerText = booksWishlist + " by " + booksWishlistAuthor + " - " + " ??? pages ";
+        } else {
+            itemWish.innerText = booksWishlist + " by " + booksWishlistAuthor + " - " + booksWishlistPg + " pages ";
+        }
+
+        // clears input text to show placeholder when item is added
         booksWishlistID.value = "";
+        booksWishlistAuthorID.value = "";
+        booksWishlistPgID.value = "";
+
         document.getElementById("alert").style.display = "none";
 
         let closeBtnWish = document.createElement("span");
@@ -67,6 +110,10 @@ document.querySelector("#addWishlist").onclick = function addWishlist() {
 
         // mobile friendly delete
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            itemWish.addEventListener("click", function() {
+                closeBtnWish.style.display = "block";
+            })
+
             itemWish.addEventListener("dblclick", function() {
                 booksWishlistList.removeChild(itemWish);
             })
