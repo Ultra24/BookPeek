@@ -20,19 +20,23 @@
         <title>BookPeek</title>
     </head>
 
-    <body>
-        <main>
+   <body>
         <noscript>Error: JavaScript is disabled! JavaScript is required for Book Keeper to work.</noscript>
         <div id = "alert">
-             Error! Please type a book's name.
+             Error! Please fill in the required information.
             <span class = "close-alert" onclick="parentElement.style.display='none'">×</span>
         </div>
         <h1>BookPeek</h1> 
-        <h2><i>The go to site for logging book consumption.</i></h2>
+        <h2><i>Gone are the days of cumbersome book tracking.</i></h2>
         <form class="book-list">
             <h3>Books I've read:</h3>
-            <div class="form" name = "read">
-                <input type="text" id="books-read" name = "booksread" placeholder="ex. Nineteen Eighty-Four by George Orwell" autocomplete="off">
+            <div class="form" name = "read" id = "books-read">
+                <input type="text" id="books-read-name" name = "booksreadname" placeholder="Book's Name" autocomplete="off" required>
+                <br class="mobile"><br class="mobile">
+                <input type="text" id = "books-read-author" name = "booksreadauthor" placeholder="Author's Name" autocomplete="off" required>
+                <br class="mobile"><br class="mobile">
+                <input type = "number" id = "books-read-pg" name = "booksreadpg" placeholder="Number of Pages" autocomplete="off">
+                <br class="mobile"><br class="mobile">
                 <button type="button" id="add" onclick = addBooksRead()>Add</button>
                 <br><br>
                 <ul id = "booksReadList">
@@ -43,14 +47,19 @@
 
             <h3>Books I'd like to read:</h3>
             <div class = "wishlist">
-            <input type="text" id="books-wishlist" name = "bookswishlist" placeholder="ex. Steve Jobs by Walter Isaacson" autocomplete="off">
+            <input type="text" id="books-wishlist-name" name = "bookswishlistname" placeholder="Book's Name" autocomplete="off">
+            <br class="mobile"><br class="mobile">
+            <input type="text" id = "books-wishlist-author" name = "bookswishlistauthor" placeholder="Author's Name" autocomplete="off" required>
+            <br class="mobile"><br class="mobile">
+            <input type = "number" id = "books-wishlist-pg" name = "bookswishlistpg" placeholder="Number of Pages" autocomplete="off">
+            <br class="mobile"><br class="mobile">
             <button type="button" id="addWishlist" onclick = addWishlist()>Add</button>
             <br><br>
             <ul id = "booksWishlistList"></ul>
             </div>
         </form>
-        </main>
         <a id = "#ghub" href = "https://github.com/ultra24" target="_blank"><i id = "ghub" class="fab fa-github fa-2x"></i></a>
+
 
         <script src="app.js"></script>
             <!-- elegant. classy. snappy. -->
